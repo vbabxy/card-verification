@@ -29,6 +29,14 @@ public class AuthenticationService {
             throw new BadRequestException("Invalid request sent to the server");
         }
 
+        if(!requestHeader.getAppKey().equalsIgnoreCase(appKey)) {
+            throw new BadRequestException("Invalid app key sent to the server");
+        }
+
+        if(!requestHeader.getTimestamp().equalsIgnoreCase(timestamp)) {
+            throw new BadRequestException("Invalid timestamp sent to the server");
+        }
+
         verifyHashParameter(requestHeader.getAuthorization());
 
     }
