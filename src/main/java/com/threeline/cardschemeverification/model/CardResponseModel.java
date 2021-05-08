@@ -14,4 +14,7 @@ public class CardResponseModel {
     private String scheme;
     private String type;
     private String brand;
+
+    public CardResponseModel() {
+    }
 }
